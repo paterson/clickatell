@@ -29,7 +29,7 @@ module Clickatell
       # Will output URLs as they are requested to stdout when 
       # debugging is enabled.
       def execute(command_name, service, parameters={})
-        logger.info parameters
+        puts parameters
         request_uri = command(command_name, service, parameters)
         puts "[debug] Sending request to #{request_uri}" if @debug
         result = get_response(request_uri)
