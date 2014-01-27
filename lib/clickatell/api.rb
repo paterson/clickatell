@@ -89,7 +89,7 @@ module Clickatell
       if message_text.length > 160
         valid_options.merge!(:concat => (message_text.length.to_f / 160).ceil)
       end
-      logger.debug valid_options[:concat]
+      puts valid_options[:concat]
       recipient = recipient.join(",")if recipient.is_a?(Array)
       response = execute_command('sendmsg', 'http',
         {:to => recipient, :text => message_text}.merge(valid_options)
